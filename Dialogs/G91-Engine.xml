@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+    
+    <name>Engine_dialog</name>
+    <layout>vbox</layout>
+    <default-padding>7</default-padding>
+    <modal>false</modal>
+    <width>400</width>
+    
+    <!-- title bar -->
+    <group>
+        <layout>hbox</layout>
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>Engine operation</label>
+        </text>
+        <empty><stretch>true</stretch></empty>
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <border>2</border>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>vbox</layout>
+        <group>
+            <layout>table</layout>
+            <button>
+                <row>0</row>
+                <col>0</col>
+                <legend>Engine auto start</legend>
+                <halign>fill</halign>
+                <live>true</live>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>fdm/jsbsim/systems/starter/gui/autostart-activate</property>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("fdm/jsbsim/systems/oxygen/cylinder-refilled-flow-rate",20);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>1</row>
+                <col>0</col>
+                <halign>left</halign>
+                <live>true</live>
+                <property>fdm/jsbsim/systems/starter/gui/autostart-message</property>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+        </group>
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>vbox</layout>
+        <group>
+            <layout>table</layout>
+            <text>
+                <row>0</row>
+                <col>0</col>
+                <label>N1</label>
+                <live>true</live>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>1</col>
+                <label>9999</label>
+                <halign>left</halign>
+                <live>true</live>
+                <format>% 2.0f%%</format>
+                <property>fdm/jsbsim/propulsion/engine[0]/n1</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>2</col>
+                <label> N2</label>
+                <live>true</live>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>3</col>
+                <label>9999</label>
+                <halign>left</halign>
+                <live>true</live>
+                <format>% 2.0f%%</format>
+                <property>fdm/jsbsim/propulsion/engine[0]/n2</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>4</col>
+                <label>  Volt: bus 0:</label>
+                <live>true</live>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>5</col>
+                <label>99999</label>
+                <halign>left</halign>
+                <live>true</live>
+                <format>%2.1f</format>
+                <property>fdm/jsbsim/systems/electric/bus[0]/V</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>6</col>
+                <label>bus 1:</label>
+                <live>true</live>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>7</col>
+                <label>99999</label>
+                <halign>left</halign>
+                <live>true</live>
+                <format>%2.1f</format>
+                <property>fdm/jsbsim/systems/electric/bus[1]/V</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>8</col>
+                <label>bus 2:</label>
+                <live>true</live>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <text>
+                <row>0</row>
+                <col>9</col>
+                <label>99999</label>
+                <halign>left</halign>
+                <live>true</live>
+                <format>%2.1f</format>
+                <property>fdm/jsbsim/systems/electric/bus[2]/V</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+        </group>
+    </group>
+
+    <hrule/>
+    
+</PropertyList>
+    
+    

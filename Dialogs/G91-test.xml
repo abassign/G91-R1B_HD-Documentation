@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+    
+    <name>G91_test_dialog</name>
+    <layout>vbox</layout>
+    <default-padding>7</default-padding>
+    <modal>false</modal>
+    <width>1000</width>
+    
+    <!-- title bar -->
+    <group>
+        <layout>hbox</layout>
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>Testing G91</label>
+        </text>
+        <empty><stretch>true</stretch></empty>
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <border>2</border>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>hbox</layout>
+        <group>
+            <layout>table</layout>
+            <text>
+                <label>Log for debug active</label>
+                <halign>right</halign>
+                <row>0</row>
+                <col>0</col>
+            </text>
+            <slider>
+                <row>0</row>
+                <col>1</col>
+                <name>Testing_log</name>
+                <property>sim/G91/testing/log</property>
+                <min>0</min>
+                <max>2</max>
+                <step>1</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </slider>
+            <text>
+                <row>0</row>
+                <col>2</col>
+                <label>999999</label>
+                <live>true</live>
+                <format>%1.0f</format>
+                <property>sim/G91/testing/log</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+            </text>
+        </group>
+    </group>
+    
+    <hrule/>
+    
+    <!-- Cockpit Lamps -->
+    
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Gauge UV lamp intensity: blu ext light = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>rendering/scene/ambient/blue</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>gauge_UV_light_spot_lamp</name>
+            <property>/fdm/jsbsim/systems/lightning/light-uv-instrument-bright</property>
+            <min>0.0</min>
+            <max>1.0</max>
+            <step>0.01</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        <text>
+            <label>9999</label>
+            <live>true</live>
+            <format>(%2.2f) </format>
+            <property>/fdm/jsbsim/systems/lightning/light-uv-instrument</property>
+            <color>
+                <red>0.2</red>
+                <green>0.9</green>
+                <blue>0.2</blue>
+            </color>
+        </text>
+        <vrule/>
+        <text>
+            <halign>right</halign>
+            <label> UV light Intensity = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.4f </format>
+            <property>sim/G91/re_emit/gauge_phosphorescent_light</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+    </group>
+    
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Gauge red emergency lamps intensity: red ext light = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>rendering/scene/ambient/red</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>gauge_Red_light_spot_lamp</name>
+            <property>/fdm/jsbsim/systems/lightning/light-red-emer-instrument-bright</property>
+            <min>0.0</min>
+            <max>1.0</max>
+            <step>0.01</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        <text>
+            <label>9999</label>
+            <live>true</live>
+            <format>(%2.2f) </format>
+            <property>/fdm/jsbsim/systems/lightning/light-red-emer-instrument</property>
+            <color>
+                <red>0.2</red>
+                <green>0.9</green>
+                <blue>0.2</blue>
+            </color>
+        </text>
+        <vrule/>
+        <text>
+            <halign>right</halign>
+            <label> Red light Intensity = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.4f </format>
+            <property>sim/G91/re_emit/gauge_red_light</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+    </group>
+    
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Console light intensity: red light = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>rendering/scene/ambient/red</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>gauge_Red_light_spot_lamp</name>
+            <property>/fdm/jsbsim/systems/lightning/light-red-console-bright</property>
+            <min>0.0</min>
+            <max>1.0</max>
+            <step>0.01</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        <text>
+            <label>9999</label>
+            <live>true</live>
+            <format>(%2.2f) </format>
+            <property>/fdm/jsbsim/systems/lightning/light-red-console</property>
+            <color>
+                <red>0.2</red>
+                <green>0.9</green>
+                <blue>0.2</blue>
+            </color>
+        </text>
+        <vrule/>
+        <text>
+            <halign>right</halign>
+            <label> Red light Intensity = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.4f </format>
+            <property>sim/G91/re_emit/light_red_console</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+    </group>
+    
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Panel light intensity: red light = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>rendering/scene/ambient/red</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <text>
+            <label>9999</label>
+            <live>true</live>
+            <format>(%2.2f) </format>
+            <property>/fdm/jsbsim/systems/lightning/light_panel</property>
+            <color>
+                <red>0.2</red>
+                <green>0.9</green>
+                <blue>0.2</blue>
+            </color>
+        </text>
+        <vrule/>
+        <text>
+            <halign>right</halign>
+            <label> Red light Intensity = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.4f </format>
+            <property>sim/G91/re_emit/light_panel</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+    </group>
+    
+    <!-- Altitude - Speed - Mach -->
+    <hrule/>
+    
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Altitude - IAS - Mach</label>
+        </text>
+        <group>
+            <layout>hbox</layout>
+            <halign>right</halign>
+            <text>
+                <label>99999</label>
+                <live>true</live>
+                <format>%5.0f </format>
+                <property>/instrumentation/altimeter/pressure-alt-ft</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+            </text>
+            <empty>
+                <stretch>true</stretch>
+            </empty>
+            <vrule/>
+            <text>
+                <label>99999</label>
+                <live>true</live>
+                <format>%5.0f </format>
+                <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+            </text>
+            <empty>
+                <stretch>true</stretch>
+            </empty>
+            <vrule/>
+            <text>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.2f </format>
+                <property>instrumentation/airspeed-indicator/indicated-mach</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+            </text>
+            <empty>
+                <stretch>true</stretch>
+            </empty>
+        </group>
+    </group>
+    <hrule/>
+    
+    <!-- Test values -->
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_1A = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_1A</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_1A</name>
+            <property>sim/G91/Test/V0_1A</property>
+            <min>-1.0</min>
+            <max>1.0</max>
+            <step>0.1</step> 
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+        <vrule/>
+        
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_1B = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_1B</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_1B</name>
+            <property>sim/G91/Test/V0_1B</property>
+            <min>0</min>
+            <max>1.0</max>
+            <step>0.01</step> 
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+    </group>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_1C = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_1C</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_1C</name>
+            <property>sim/G91/Test/V0_1C</property>
+            <min>-1.0</min>
+            <max>1.0</max>
+            <step>0.001</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+        <vrule/>
+        
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_1D = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_1D</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_1D</name>
+            <property>sim/G91/Test/V0_1D</property>
+            <min>-1.0</min>
+            <max>1.0</max>
+            <step>0.01</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+    </group>
+    
+    <group>
+
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_10A = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_10A</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_10A</name>
+            <property>sim/G91/Test/V0_10A</property>
+            <min>-10.0</min>
+            <max>10.0</max>
+            <step>0.1</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+        <vrule/>
+        
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_10B = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_10B</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_10B</name>
+            <property>sim/G91/Test/V0_10B</property>
+            <min>-10.0</min>
+            <max>10.0</max>
+            <step>0.1</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_100A = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f</format>
+            <property>sim/G91/Test/V0_100A</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_100A</name>
+            <property>sim/G91/Test/V0_100A</property>
+            <min>-100.0</min>
+            <max>100.0</max>
+            <step>1.0</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+        <vrule/>
+        
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_100B = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%2.3f </format>
+            <property>sim/G91/Test/V0_100B</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_100B</name>
+            <property>sim/G91/Test/V0_100B</property>
+            <min>0.0</min>
+            <max>100.0</max>
+            <step>0.1</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+    </group>
+    
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_1000A = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%3.3f </format>
+            <property>sim/G91/Test/V0_1000A</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_1000A</name>
+            <property>sim/G91/Test/V0_1000A</property>
+            <min>-1000.0</min>
+            <max>1000.0</max>
+            <step>1.0</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+        <vrule/>
+        
+        <text>
+            <halign>left</halign>
+            <label>sim_G91_Test_V0_1000B = </label>
+        </text>
+        <text>
+            <label>99999</label>
+            <live>true</live>
+            <format>%3.3f </format>
+            <property>sim/G91/Test/V0_1000B</property>
+            <color>
+                <red>0.9</red>
+                <green>0.9</green>
+                <blue>0.9</blue>
+            </color>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <slider>
+            <name>sim_G91_Test_V0_1000B</name>
+            <property>sim/G91/Test/V0_1000B</property>
+            <min>-1000.0</min>
+            <max>1000.0</max>
+            <step>0.1</step>  
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+        
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>hbox</layout>
+        <group>
+            <layout>table</layout>
+            <text>
+                <label>Compositor lights</label>
+                <halign>right</halign>
+                <row>0</row>
+                <col>0</col>
+            </text>
+            <radio>
+                <row>0</row>
+                <col>1</col>
+                <halign>fill</halign>
+                <label>uv-dx-sw</label>
+                <property>sim/G91/lights/Compositor/canopy-uv-dx-sw</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </radio>
+            <radio>
+                <row>0</row>
+                <col>2</col>
+                <halign>fill</halign>
+                <label>uv-sx-sw</label>
+                <property>sim/G91/lights/Compositor/canopy-uv-sx-sw</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </radio>
+            <radio>
+                <row>0</row>
+                <col>3</col>
+                <halign>fill</halign>
+                <label>gray</label>
+                <property>sim/G91/lights/Compositor/canopy-ambient-gray-sw</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </radio>
+            <radio>
+                <row>0</row>
+                <col>4</col>
+                <halign>fill</halign>
+                <label>gray specular</label>
+                <property>sim/G91/lights/Compositor/canopy-ambient-gray-specular-sw</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </radio>
+            <radio>
+                <row>0</row>
+                <col>6</col>
+                <halign>fill</halign>
+                <label>red</label>
+                <property>sim/G91/lights/Compositor/canopy-ambient-red-sw</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </radio>
+        </group>
+    </group>
+    
+</PropertyList>

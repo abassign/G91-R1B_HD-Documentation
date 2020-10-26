@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+http://wiki.flightgear.org/Howto:Adding_a_canvas_to_a_GUI_dialog
+-->
+
+<PropertyList>
+    
+    <name>Livery_dialog</name>
+    <layout>vbox</layout>
+    <default-padding>7</default-padding>
+    <modal>false</modal>
+    <width>600</width>
+    
+    <!-- title bar -->
+    
+    <empty><stretch>true</stretch></empty>
+    
+    
+    <group>
+        <layout>hbox</layout>
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>Livery configuration</label>
+        </text>
+        <empty><stretch>true</stretch></empty>
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <border>2</border>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>vbox</layout>
+        <group>
+            <layout>table</layout>
+            
+            <button>
+                <row>0</row>
+                <col>0</col>
+                <legend>01</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",1);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>0</row>
+                <col>1</col>
+                <label>PAN - National Aerobatic Pinocchio nose (R1)</label>
+                <halign>left</halign>
+            </text>
+            
+            <button>
+                <row>1</row>
+                <col>0</col>
+                <legend>02</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",2);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>1</row>
+                <col>1</col>
+                <label>PAN - National Aerobatic recognition nose (R1B)</label>
+                <halign>left</halign>
+            </text>
+
+            <button>
+                <row>2</row>
+                <col>0</col>
+                <legend>03</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",3);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>2</row>
+                <col>1</col>
+                <label>Italian Air Force - 2nd flight flock n. 37 (R1B)</label>
+                <halign>left</halign>
+            </text>
+            
+            <button>
+                <row>3</row>
+                <col>0</col>
+                <legend>04</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",8);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>3</row>
+                <col>1</col>
+                <label>Italian Air Force - 2nd flight flock - 200000 h</label>
+                <halign>left</halign>
+            </text>
+
+            <button>
+                <row>4</row>
+                <col>0</col>
+                <legend>05</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",4);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>4</row>
+                <col>1</col>
+                <label>Silver version, used as a prototype Pinocchio nose (R1)</label>
+                <halign>left</halign>
+            </text>
+            
+            <button>
+                <row>5</row>
+                <col>0</col>
+                <legend>06</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",5);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>5</row>
+                <col>1</col>
+                <label>Silver version R1B recognition nose (R1B)</label>
+                <halign>left</halign>
+            </text>
+            
+            <button>
+                <row>6</row>
+                <col>0</col>
+                <legend>07</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",6);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>6</row>
+                <col>1</col>
+                <label>Portuguese R3 esq 301 (R3)</label>
+                <halign>left</halign>
+            </text>
+            
+            <button>
+                <row>7</row>
+                <col>0</col>
+                <legend>07</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",9);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>7</row>
+                <col>1</col>
+                <label>Portuguese R3 esq 301 jaguares</label>
+                <halign>left</halign>
+            </text>
+            
+            <button>
+                <row>8</row>
+                <col>0</col>
+                <legend>08</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/G91/liveries/active/id",7);
+                    </script>
+                </binding>
+            </button>
+            <text>
+                <row>8</row>
+                <col>1</col>
+                <label>Luftwaffe c/n 535 (R3)</label>
+                <halign>left</halign>
+            </text>
+            
+        </group>
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>vbox</layout>
+        <group>
+            <layout>table</layout>
+            <text>
+                <row>0</row>
+                <col>0</col>
+                <label>Set diffuse</label>
+                <halign>left</halign>
+            </text>
+            <slider>
+                <row>0</row>
+                <col>1</col>
+                <width>100</width>
+                <property>sim/G91/liveries/active/diffuse</property>
+                <min>0</min>
+                <max>1</max>
+                <step>0.01</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </slider>
+            <text>
+                <row>0</row>
+                <col>2</col>
+                <halign>left</halign>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.2f </format>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+                <property>sim/G91/liveries/active/diffuse</property>
+            </text>
+            
+            <text>
+                <row>1</row>
+                <col>0</col>
+                <label>Set specular</label>
+                <halign>left</halign>
+            </text>
+            <slider>
+                <row>1</row>
+                <col>1</col>
+                <width>100</width>
+                <property>sim/G91/liveries/active/specular</property>
+                <min>0</min>
+                <max>1</max>
+                <step>0.01</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </slider>
+            <text>
+                <row>1</row>
+                <col>2</col>
+                <halign>left</halign>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.2f </format>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+                <property>sim/G91/liveries/active/specular</property>
+            </text>
+            <text>
+                <row>2</row>
+                <col>0</col>
+                <label>Set dirty</label>
+                <halign>left</halign>
+            </text>
+            <button>
+                <row>2</row>
+                <col>1</col>
+                <legend>Dirty on/off</legend>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/G91/liveries/active/dirty-set</property>
+                </binding>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </button>
+            <text>
+                <row>2</row>
+                <col>2</col>
+                <halign>left</halign>
+                <live>true</live>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+                <property>sim/G91/liveries/active/dirty-Msg</property>
+            </text>
+            <text>
+                <row>3</row>
+                <col>0</col>
+                <label>Set normal map</label>
+                <halign>left</halign>
+            </text>
+            <button>
+                <row>3</row>
+                <col>1</col>
+                <legend>Normal map</legend>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/G91/liveries/active/normalmap_enabled</property>
+                </binding>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </button>
+            <text>
+                <row>3</row>
+                <col>2</col>
+                <halign>left</halign>
+                <live>true</live>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.9</blue>
+                </color>
+                <property>sim/G91/liveries/active/normalmap_enabled-Msg</property>
+            </text>
+            
+        </group>
+    </group>
+    
+    <hrule/>
+    
+    <group>
+        <layout>vbox</layout>
+        <group>
+            <layout>table</layout>
+            <text>
+                <row>0</row>
+                <col>0</col>
+                <label>Livery current resolution</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <row>0</row>
+                <col>1</col>
+                <halign>center</halign>
+                <label>99999</label>
+                <live>true</live>
+                <format>%5.0d </format>
+                <color>
+                    <red>0.8</red>
+                    <green>0.0</green>
+                    <blue>0.0</blue>
+                </color>
+                <property>sim/G91/liveries/active/resolution</property>
+            </text>
+            <text>
+                <row>0</row>
+                <col>2</col>
+                <label>next session resolution</label>
+                <halign>left</halign>
+            </text>
+            <slider>
+                <row>0</row>
+                <col>3</col>
+                <width>100</width>
+                <property>sim/G91/liveries/active/resolution-set</property>
+                <min>1</min>
+                <max>4</max>
+                <step>1</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        var resolutionSet = getprop("sim/G91/liveries/active/resolution-set");
+                        var resolution = 0;
+                        if (resolutionSet == 1) {
+                            resolution = 512;
+                        } else if (resolutionSet == 2) {
+                            resolution = 1024;
+                        } else if (resolutionSet == 3) {
+                            resolution = 2048;
+                        } else if (resolutionSet == 4) {
+                            resolution = 4096;
+                        }
+                        setprop("sim/G91/liveries/active/resolution-set-pixel",resolution);
+                    </script>
+                </binding>
+            </slider>
+            <text>
+                <row>0</row>
+                <col>4</col>
+                <halign>left</halign>
+                <label>99999</label>
+                <live>true</live>
+                <format>%5.0d </format>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.0</blue>
+                </color>
+                <property>sim/G91/liveries/active/resolution-set-pixel</property>
+            </text>
+        </group>
+    </group>
+
+    <hrule/>
+    <!--
+    <group>
+        <layout>vbox</layout>
+        <group>
+            <layout>table</layout>
+    
+            <text>
+                <row>0</row>
+                <col>0</col>
+                <halign>left</halign>
+                <label>Logo Id:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <input>
+                <row>0</row>
+                <col>1</col>
+                <property>sim/G91/liveries/active/symbol_id</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_id_mod</property>
+                    <value>1</value>
+                </binding>
+            </input>
+            <text>
+                <row>0</row>
+                <col>2</col>
+                <halign>left</halign>
+                <label>Layer:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <input>
+                <row>0</row>
+                <col>3</col>
+                <property>sim/G91/liveries/active/symbol_layer</property>
+                <live>false</live>
+            </input>
+            <text>
+                <row>1</row>
+                <col>0</col>
+                <halign>left</halign>
+                <label>Logo Sx xy X:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <slider>
+                <row>1</row>
+                <col>1</col>
+                <name>X</name>
+                <property>sim/G91/liveries/active/symbol_x_sx</property>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>0.001</step>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </slider>
+            <text>
+                <row>1</row>
+                <col>2</col>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.3f</format>
+                <property>sim/G91/liveries/active/symbol_x_sx</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <text>
+                <row>1</row>
+                <col>3</col>
+                <halign>left</halign>
+                <label>Y:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <slider>
+                <row>1</row>
+                <col>4</col>
+                <name>Y</name>
+                <property>sim/G91/liveries/active/symbol_y_sx</property>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>0.001</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </slider>
+            <text>
+                <row>1</row>
+                <col>5</col>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.3f</format>
+                <property>sim/G91/liveries/active/symbol_y_sx</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <radio>
+                <row>1</row>
+                <col>6</col>
+                <halign>fill</halign>
+                <label>Mirror</label>
+                <property>sim/G91/liveries/active/symbol_mirror_sx</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </radio>
+            
+            <text>
+                <row>2</row>
+                <col>0</col>
+                <halign>left</halign>
+                <label>Logo Dx xy X:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <slider>
+                <row>2</row>
+                <col>1</col>
+                <name>X</name>
+                <property>sim/G91/liveries/active/symbol_x_dx</property>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>0.001</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </slider>
+            <text>
+                <row>2</row>
+                <col>2</col>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.3f</format>
+                <property>sim/G91/liveries/active/symbol_x_dx</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <text>
+                <row>2</row>
+                <col>3</col>
+                <halign>left</halign>
+                <label>Y:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <slider>
+                <row>2</row>
+                <col>4</col>
+                <name>Y</name>
+                <property>sim/G91/liveries/active/symbol_y_dx</property>
+                <min>0.0</min>
+                <max>1.0</max>
+                <step>0.001</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </slider>
+            <text>
+                <row>2</row>
+                <col>5</col>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.3f</format>
+                <property>sim/G91/liveries/active/symbol_y_dx</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            <radio>
+                <row>2</row>
+                <col>6</col>
+                <halign>fill</halign>
+                <label>Mirror</label>
+                <property>sim/G91/liveries/active/symbol_mirror_dx</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </radio>
+            <text>
+                <row>3</row>
+                <col>0</col>
+                <halign>left</halign>
+                <label>Scale:</label>
+                <color>
+                    <red>0.8</red>
+                    <green>0.8</green>
+                    <blue>0.8</blue>
+                </color>
+            </text>
+            <slider>
+                <row>3</row>
+                <col>1</col>
+                <name>Scale</name>
+                <property>sim/G91/liveries/active/symbol_scale</property>
+                <min>0.1</min>
+                <max>2.0</max>
+                <step>0.001</step>  
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>sim/G91/liveries/active/symbol_input_set_mod</property>
+                    <value>1</value>
+                </binding>
+            </slider>
+            <text>
+                <row>3</row>
+                <col>2</col>
+                <label>99999</label>
+                <live>true</live>
+                <format>%1.3f</format>
+                <property>sim/G91/liveries/active/symbol_scale</property>
+                <color>
+                    <red>0.9</red>
+                    <green>0.9</green>
+                    <blue>0.0</blue>
+                </color>
+            </text>
+            
+        </group>
+    </group>
+    -->
+</PropertyList>
+
